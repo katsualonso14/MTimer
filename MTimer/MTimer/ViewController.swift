@@ -44,7 +44,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         // Do any additional setup after loading the view.
         timePicker.dataSource = self
         timePicker.delegate = self
-//        print(timeList[0])
+        print(timeList[0])
 //        print(timeList[1])
 //        print(timeList[2])
         
