@@ -12,8 +12,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
    
     let timeList = [[Int](0...24), [Int](0...60), [Int](0...60)]
     var pickerdata:String!
-    var timeTotal = 0
-    var timeStr = ""
+    var timeTotal:Int!
     
     @IBOutlet weak var timePicker: UIPickerView!
     @IBAction func doneButton(_ sender: Any) {
@@ -21,21 +20,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let storyboard: UIStoryboard = self.storyboard!
         let timer = storyboard.instantiateViewController(withIdentifier: "timer") as! TimerViewController
         
-//        pickerdata = "\(timeList[0])"
-        total()
-        print(timeTotal)
-        timeStr = timer.timerLabel.text!
-        
-//        pickerdata = "\(timeTotal)"
-//        pickerdata = timer.timerdata
-        
+//
+        timeTotal = timer.getTime
+    
         self.present(timer, animated: true, completion: nil)
     }
     
     @IBAction func button(_ sender: Any) {
-        total()
-        print(timeTotal)
-//        print(pickerdata ?? "ellor")
+//        total()
+        print(timeTotal ?? "this is nil")
     }
     
     
@@ -61,17 +54,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        pickerdata = String(timeList[component][row])
-//        print(pickerdata ?? "ellor")
          
-//        total()
-//        print(timeTotal)
+        total()
+        print(timeTotal ?? "this is nil")
+        
         }
     
 //    pickerの数字をたすメソッド
     func total() {
         timeTotal = timeList[0][timePicker.selectedRow(inComponent: 0)] + timeList[0][timePicker.selectedRow(inComponent: 1)] + timeList[0][timePicker.selectedRow(inComponent: 2)]
-        timeStr = "\(timeTotal)"
+
     }
 }
 

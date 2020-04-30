@@ -9,8 +9,7 @@ class TimerViewController: UIViewController {
     //秒数を保持するキー　文字列の理由？？
     var key = "time"
     var timerRunning = false
-    var timerdata:String!
-    var getTime = 0
+    var getTime:Int!
     
     
     @IBOutlet weak var timerLabel: UILabel!
@@ -34,7 +33,7 @@ class TimerViewController: UIViewController {
     @IBAction func StopButton(_ sender: Any) {
       
     timer.invalidate()
-        print(getTime)
+        print(getTime ?? "this is nil")
     }
     
     
@@ -42,10 +41,12 @@ class TimerViewController: UIViewController {
        
             timer.invalidate()
             
-            let set = UserDefaults.standard
-            let timevalue = set.integer(forKey: timerdata)
-            
-            timerLabel.text = "\(timevalue)"
+//            let set = UserDefaults.standard
+//            let timevalue = set.integer(forKey: timerdata)
+        
+        let timevalue = getTime
+        
+        timerLabel.text = "\(timevalue!)"
            timerRunning = false
         
         
@@ -62,12 +63,14 @@ class TimerViewController: UIViewController {
     // カウントダウンをする関数
     @objc func updateTimer() -> Int  {
         //UserDefaultのインスタンス作成
-            let set = UserDefaults.standard
+//            let set = UserDefaults.standard
+        
+        let timevalue = getTime
        // integer 整数として登録
-            let timevalue = set.integer(forKey: timerdata)
+//            let timevalue = set.integer(forKey: timerdata)
             count += 1
         //時間　＝　pickerで設定する時間　ー　count
-            let remainCount = timevalue - count
+        let remainCount = timevalue! - count
             timerLabel.text = "\(remainCount)"
         
         timerRunning = true
@@ -94,7 +97,8 @@ class TimerViewController: UIViewController {
 //        key = timerdata
 //        timerLabel.text = String(getTime)
 //        print(timerdata ?? "ellor")
-//        print(getTime!)
+        print(getTime ?? "this is nil")
+        
     }
 
     

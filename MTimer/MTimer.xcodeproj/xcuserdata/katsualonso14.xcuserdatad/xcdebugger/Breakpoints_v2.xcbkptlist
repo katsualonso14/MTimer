@@ -3,4 +3,162 @@
    uuid = "57039AB0-069A-4E12-BF4F-5B91ECD3FA78"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5F187C8-5575-4253-ABA7-3D33BA65B938"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MTimer/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "doneButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7ADA1329-B63F-4893-BCE8-588460FAFFDA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MTimer/TimerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "TimerViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24E43332-D3F9-458D-8495-5F2944DD90D2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MTimer/TimerViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "TimerViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "24E43332-D3F9-458D-8495-5F2944DD90D2 - a816cac8ce91a319"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTimer.TimerViewController.timerLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "MTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/katsualonso14/Desktop/MTimer/MTimer/MTimer/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "24E43332-D3F9-458D-8495-5F2944DD90D2 - eb6b2ffd70e78f15"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTimer.TimerViewController.timerLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "MTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/katsualonso14/Desktop/MTimer/MTimer/MTimer/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "24E43332-D3F9-458D-8495-5F2944DD90D2 - 7e949644537f4804"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTimer.TimerViewController.timerLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "MTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/katsualonso14/Desktop/MTimer/MTimer/MTimer/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "24E43332-D3F9-458D-8495-5F2944DD90D2 - 17409c6c4d14960f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTimer.TimerViewController.timerLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/katsualonso14/Desktop/MTimer/MTimer/MTimer/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "24E43332-D3F9-458D-8495-5F2944DD90D2 - b0b05a6c596aaefb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTimer.TimerViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MTimer.TimerViewController"
+                  moduleName = "MTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/katsualonso14/Desktop/MTimer/MTimer/MTimer/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "1012">
+               </Location>
+               <Location
+                  uuid = "24E43332-D3F9-458D-8495-5F2944DD90D2 - 7beb0dfc5c053dce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTimer.TimerViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MTimer.TimerViewController&gt;"
+                  moduleName = "MTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/katsualonso14/Desktop/MTimer/MTimer/MTimer/TimerViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "947">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F6192BC4-792B-45B3-9D32-7C341E49C8E4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MTimer/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "doneButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
