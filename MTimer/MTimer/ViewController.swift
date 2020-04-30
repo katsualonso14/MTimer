@@ -47,7 +47,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         print(timeList[0])
 //        print(timeList[1])
 //        print(timeList[2])
-        
+        print(1)
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
