@@ -2,6 +2,7 @@
 
 import UIKit
 import AVFoundation
+import RealmSwift
 //音のフレームワーク
 
 class TimerViewController: UIViewController,AVAudioPlayerDelegate {
@@ -93,6 +94,7 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
         let storyboard: UIStoryboard = self.storyboard!
                let memo1 = storyboard.instantiateViewController(withIdentifier: "memo1") as! MemoViewController
                
+        
                self.present(memo1, animated: true, completion: nil)
     }
     
@@ -121,13 +123,23 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
        // 00:00:00で表示させる
         timerLabel.text = timeString(time: TimeInterval(remainCount))
         
-//
+    
+        
 //        0秒になったら止まる
         if remainCount == 0 {
             timer.invalidate()
             timerLabel.text = "00:00:00"
             //終了音を鳴らす
             playSound(name: "free")
+            
+            let realm = try! Realm()
+            try! realm.write {
+                let m = realm.objects(Meditatioan.self)
+                m.last?.mcount += 1
+                print(m)
+                print(Realm.Configuration.defaultConfiguration.fileURL!)
+            }
+
         }
             return remainCount
         
@@ -150,7 +162,8 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
            super.viewDidLoad()
-           
+
+          
        }
 
     override func viewDidAppear(_ animated: Bool) {

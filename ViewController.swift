@@ -1,6 +1,7 @@
 
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
    
@@ -29,8 +30,31 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         timePicker.dataSource = self
         timePicker.delegate = self
        
+//    let realm = try! Realm()
+//               let m = Meditatioan()
+//               m.mcount = 1
+//
+//               try! realm.write(){
+//                   realm.add(m)
+//               }
+        
+        let defaults = UserDefaults.standard
+        //        初回起動時のみ　mcountを追加
+        if defaults.bool(forKey: "firstLaunch") {
+
+            let realm = try! Realm()
+            let m = Meditatioan()
+            m.mcount = 1
+
+            try! realm.write(){
+                realm.add(m)
+            }
+            //            2回目以降はキーをfalseに
+            defaults.set(false, forKey: "firstLaunch")
+        }
     }
 
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return timeList.count
        }
