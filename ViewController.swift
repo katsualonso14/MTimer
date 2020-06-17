@@ -14,11 +14,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         let storyboard: UIStoryboard = self.storyboard!
         let timer = storyboard.instantiateViewController(withIdentifier: "timer") as! TimerViewController
-        
-//
+//        let timer = storyboard.instantiateViewController(withIdentifier: "timer")
+////
         timer.getTime = timeTotal
     
-        self.present(timer, animated: true, completion: nil)
+        navigationController?.pushViewController(timer, animated: true)
+//        self.present(timer, animated: true, completion: nil)r
     }
     
 
