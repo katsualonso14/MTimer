@@ -12,7 +12,10 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
     var getTime:Int!
     var audioPlayer: AVAudioPlayer!
     //インスタンスの宣言
-
+    var backgroundTaskID: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
+   
+   
+    
     
     func playSound(name: String) {
         //もしpathがfree.mp3じゃなかったらprint
@@ -82,38 +85,19 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
         
     }
    
-    @IBAction func backButton(_ sender: Any) {
-        
-        let storyboard: UIStoryboard = self.storyboard!
-        let picikerboard = storyboard.instantiateViewController(withIdentifier: "pickerboard") as! ViewController
-        
-        self.present(picikerboard, animated: true, completion: nil)
-    }
     
     @IBAction func memoButton(_ sender: Any) {
-        let storyboard: UIStoryboard = self.storyboard!
-               let memo1 = storyboard.instantiateViewController(withIdentifier: "memo1") as! MemoViewController
-               
+        //ランダムで表示する
+        let segues = ["pushScore","pushScore2","pushScore3"]
+        let cou = Int(arc4random_uniform(UInt32(segues.count)))
+        let segueName = segues[cou]
         
-               self.present(memo1, animated: true, completion: nil)
-    }
-    
-    @IBAction func memo2Button(_ sender: Any) {
-        let storyboard: UIStoryboard = self.storyboard!
-        let memo2 = storyboard.instantiateViewController(withIdentifier: "memo2") as! Memo2ViewController
         
-        self.present(memo2, animated: true, completion: nil)
+        self.performSegue(withIdentifier: segueName, sender: self)
+       
     }
-    
-    @IBAction func memo3Button(_ sender: Any) {
-        let storyboard: UIStoryboard = self.storyboard!
-        let memo3 = storyboard.instantiateViewController(withIdentifier: "memo3") as! Memo3ViewController
+
         
-        self.present(memo3, animated: true, completion: nil)
-    }
-    
-    
-    
     // カウントダウンをする関数
     @objc func updateTimer() -> Int {
        
@@ -148,6 +132,13 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
     //タイマーを動かす関数
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+        
+        self.backgroundTaskID = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+        self.longTime()
+    }
+    
+    func longTime() {
+        UIApplication.shared.endBackgroundTask(self.backgroundTaskID)
     }
     
     //00:00:00に変える処理
@@ -177,6 +168,27 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
         
     }
   
+    func go() {
+        let storyboard: UIStoryboard = self.storyboard!
+            let score1 = storyboard.instantiateViewController(withIdentifier: "score1") as! UserScoreViewController
+            
+            self.present(score1, animated: true, completion: nil)
+        }
+    
+    func go2() {
+        let storyboard: UIStoryboard = self.storyboard!
+            let score2 = storyboard.instantiateViewController(withIdentifier: "score2") as! UserScore2ViewController
+            
+            self.present(score2, animated: true, completion: nil)
+        
+    }
+    
+    func go3() {
+        let storyboard: UIStoryboard = self.storyboard!
+            let score3 = storyboard.instantiateViewController(withIdentifier: "score3") as! UserScore3ViewController
+            
+            self.present(score3, animated: true, completion: nil)
+    }
     
 }
 
