@@ -11,12 +11,8 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
     var count = 0
     var getTime:Int!
     var audioPlayer: AVAudioPlayer!
-    //インスタンスの宣言
-    var backgroundTaskID: UIBackgroundTaskIdentifier = UIBackgroundTaskIdentifier(rawValue: 0)
-   
-   
     
-    
+
     func playSound(name: String) {
         //もしpathがfree.mp3じゃなかったらprint
             guard let path = Bundle.main.path(forResource: "free", ofType: "mp3") else {
@@ -54,9 +50,8 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
         } else if getTime == 0 {
             return
      } else {
-        //動かすインスタンス
         runTimer()
-        }
+    }
     }
          
    
@@ -133,14 +128,8 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
         
-        self.backgroundTaskID = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
-        self.longTime()
     }
-    
-    func longTime() {
-        UIApplication.shared.endBackgroundTask(self.backgroundTaskID)
-    }
-    
+
     //00:00:00に変える処理
       func timeString(time: TimeInterval) -> String {
           let hour = Int(time) / 3600
@@ -157,6 +146,11 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
           
        }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         if getTime == nil {
             timerLabel.text = "00:00:00"
