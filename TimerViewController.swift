@@ -11,7 +11,6 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
     var count = 0
     var getTime:Int!
     var audioPlayer: AVAudioPlayer!
-    
 
     func playSound(name: String) {
         //もしpathがfree.mp3じゃなかったらprint
@@ -37,9 +36,14 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
 //
 //
     
+   
     
     @IBOutlet weak var timerLabel: UILabel!
-   
+    @IBOutlet weak var memoButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    
     @IBAction func StartButton(_ sender: Any) {
      //タイマーが有効なら　何もしない
      if timer.isValid == true {
@@ -51,6 +55,7 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
             return
      } else {
         runTimer()
+//        realmSave()
     }
     }
          
@@ -139,11 +144,26 @@ class TimerViewController: UIViewController,AVAudioPlayerDelegate {
           return String(format: "%02d:%02d:%02d", hour, minutes, second)
       }
     
+////    レルムヘ時間の保存
+//    func realmSave() {
+//        let Realm_time = TimerList()
+//        Realm_time.elapsedTime = getTime!
+//        Realm_time.memo = getText!
+//
+//        let realm = try! Realm()
+//        try! realm.write() {
+//            realm.add(Realm_time)
+//            print(Realm.Configuration.defaultConfiguration.fileURL!)
+//        }
+//    }
     
     override func viewDidLoad() {
            super.viewDidLoad()
 
-          
+        startButton.layer.cornerRadius = 10
+        stopButton.layer.cornerRadius = 10
+        resetButton.layer.cornerRadius = 10
+        memoButton.layer.cornerRadius = 10
        }
 
     override func viewWillAppear(_ animated: Bool) {
