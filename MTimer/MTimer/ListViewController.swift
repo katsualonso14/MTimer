@@ -1,14 +1,14 @@
 //
-//  MemoViewController.swift
+//  ListViewController.swift
 //  MTimer
 //
-//  Created by 玉井　勝也 on 2020/04/07.
+//  Created by 玉井　勝也 on 2020/06/26.
 //  Copyright © 2020 katsuya tamai. All rights reserved.
 //
 
 import UIKit
 
-class MemoViewController: UIViewController {
+class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
