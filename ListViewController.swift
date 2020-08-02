@@ -8,7 +8,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var elapsed_time = 1
     
     
-
+   
     @IBOutlet weak var timerTable: UITableView!
     
     override func viewDidLoad() {
@@ -21,33 +21,40 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }catch{
 
         }
-        
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        timerTable.reloadData()
+    override func viewDidAppear(_ animated: Bool) {
+        self.timerTable.reloadData()
+        timerTable.dataSource = self
+        timerTable.delegate = self
     }
     
+// 
 //    セルの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)->Int {
 
         return Item.count
     }
 
-//    セルの中身
+//    セルの中身/
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルを取得する
-        let cell = timerTable.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        let object = Item[indexPath.row]
+         let cell = timerTable.dequeueReusableCell(withIdentifier: "TableViewCell") as! TabelViewCell
+            
         
-        cell.textLabel!.text = object.memo
-        cell.cellLabel!.text = timeString(time: TimeInterval(object.elapsedTime))
+        let object = Item[indexPath.row]
+       
+        
+        cell.memoLabel!.text = object.memo
+        cell.timeLabel!.text = timeString(time: TimeInterval(object.elapsedTime))
         
         elapsed_time = object.elapsedTime
         
         return cell
+   
     }
+   
     
     func timeString(time: TimeInterval) -> String {
              let hour = Int(time) / 3600
@@ -87,7 +94,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
        }
     
     func configure(data: [Int]) {
-      // データ更新処理など実行 (今回は省略)
+      // データ更新処理など実行 
         self.timerTable.reloadData()
 
       DispatchQueue.main.async {
